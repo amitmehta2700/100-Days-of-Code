@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main() {
+    int a,b,c;
+    printf("Enter two numbers a&b:");
+    scanf("%d%d",&a,&b);
+    c=a;
+    a=b;
+    b=c;
+    printf("value of a: %d\n", a);
+    printf("value of b: %d\n", b);
+    return 0;
+}
