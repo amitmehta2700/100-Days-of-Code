@@ -1,3 +1,4 @@
+//
 #include<stdio.h>
 int main() {
     int a,b,sum;
@@ -6,4 +7,5 @@ int main() {
     sum=a+b;
     printf("the sum is %d\n",sum);
     return 0;
+
 }
