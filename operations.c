@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main() {
+int a,b,sum,sub,product,quotient;
+printf("Enter two numbers: ");
+scanf("%d %d", &a, &b);
+sum = a + b;
+sub = a - b;
+product = a * b;
+quotient = a / b;
+printf("Sum: %d\n", sum);
+printf("Subtraction: %d\n", sub);
+printf("Multiplication: %d\n", product);
+printf("Division: %d\n", quotient);
+return 0;
+}
