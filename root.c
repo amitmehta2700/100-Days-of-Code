@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+    int main() {
+        float a,b,c,D,r1,r2,real,img;
+        printf("Enter coffecient a,b,c");
+        scanf("%f%f%f", &a, &b, &c);
+        D=b*b-4*a*c;
+        if(D>0)
+        {
+        printf("Roots are real and different\n");
+        }
+        else if (D==0)
+        {
+            printf("Roots are real and same\n");
+        }
+        else if (D<0)
+        {
+            printf("Roots are complex and different\n");
+        }
+        return 0;
+    }
