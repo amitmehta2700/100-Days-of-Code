@@ -15,4 +15,5 @@ if(origional==rev)
 else
     printf("%d is not a palindrome", origional);
 return 0;
+
 }
