@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    printf("Enter an integer: ");
+    if (scanf("%d", &n) != 1) return 0;
+
+    if (n == 0) {
+        printf("0 has infinitely many factors (every nonzero integer divides 0).\n");
+        return 0;
+    }
+
+    int m = abs(n);
+    printf("Positive factors of %d:\n", n);
+    for (int i = 1; i <= m; ++i) {
+        if (m % i == 0) printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}
