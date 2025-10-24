@@ -1,0 +1,26 @@
+#include <stdio.h> 
+
+int main() {
+    const int r= 3;
+    const int c = 4;
+    int matrix[r][c] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12}
+    };
+    int transpose[c][r]; 
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            transpose[j][i] = matrix[i][j];
+        }
+    }
+    printf("Transposed Matrix:\n");
+    for (int i = 0; i < c; i++) {
+        for (int j = 0; j < r; j++) {
+            printf("%d ", transpose[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
