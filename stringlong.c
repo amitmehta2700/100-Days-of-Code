@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void findLongestWord(const char *sentence, char *longestWordBuffer) {
+    int maxLen = 0;
+    int currentLen = 0;
+    const char *currentWordStart = sentence;
+    const char *longestWordStart = sentence;
+
+    for (int i = 0; sentence[i] != '\0'; i++) {
+        if (isalpha(sentence[i])) { 
+            currentLen++;
+        } else { 
+            if (currentLen > maxLen) {
+                maxLen = currentLen;
+                longestWordStart = currentWordStart;
+            }
+            currentLen = 0;
+            currentWordStart = &sentence[i + 1]; // Start of the next potential word
+        }
+    }
+
+    if (currentLen > maxLen) {
+        maxLen = currentLen;
+        longestWordStart = currentWordStart;
+    }
+
+    strncpy(longestWordBuffer, longestWordStart, maxLen);
+    longestWordBuffer[maxLen] = '\0'; 
+}
+
+int main() {
+    char sentence[] = "This is a sample sentence to find the longest word.";
+    char longestWord[50]; 
+    findLongestWord(sentence, longestWord);
+
+    printf("The longest word in the sentence is: \"%s\"\n", longestWord);
+
+    return 0;
+}
