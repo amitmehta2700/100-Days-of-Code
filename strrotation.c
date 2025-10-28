@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+bool isRotation(const char *str1, const char *str2) {
+    int len1 = strlen(str1);
+    int len2 = strlen(str2);
+    if (len1 != len2 || len1 == 0) {
+        return false;
+    }
+    char *concat = malloc(len1 * 2 + 1);
+    if (!concat) {
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
+
+    strcpy(concat, str1);
+    strcat(concat, str1);
+
+    bool result = (strstr(concat, str2) != NULL);
+
+    free(concat);
+    return result;
+}
+
+int main(void) {
+    const char *s1 = "abcd";
+    const char *s2 = "cdab";
+
+    if (isRotation(s1, s2)) {
+        printf("\"%s\" is a rotation of \"%s\"\n", s2, s1);
+    } else {
+        printf("\"%s\" is NOT a rotation of \"%s\"\n", s2, s1);
+    }
+
+    return 0;
+}
