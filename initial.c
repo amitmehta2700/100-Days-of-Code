@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char name[100];
+    char words[10][20];
+    int i = 0, j = 0, k = 0;
+
+    printf("Enter full name: ");
+    fgets(name, sizeof(name), stdin);
+    while (name[i] != '\0') {
+        if (name[i] == ' ' || name[i] == '\n') {
+            words[j][k] = '\0';
+            j++;
+            k = 0;
+        } else {
+            words[j][k++] = name[i];
+        }
+        i++;
+    }
+    for (i = 0; i < j; i++) {
+        printf("%c.", words[i][0]);
+    }
+    printf(" %s", words[j]);
+
+    return 0;
+}
