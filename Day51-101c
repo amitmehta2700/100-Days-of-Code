@@ -7,8 +7,8 @@ int firstOccurrence(int nums[], int n, int target) {
         int mid = (low + high) / 2;
 
         if (nums[mid] == target) {
-            ans = mid;          // possible answer
-            high = mid - 1;     // search in left half
+            ans = mid;          
+            high = mid - 1;    
         }
         else if (nums[mid] < target) {
             low = mid + 1;
@@ -27,8 +27,8 @@ int lastOccurrence(int nums[], int n, int target) {
         int mid = (low + high) / 2;
 
         if (nums[mid] == target) {
-            ans = mid;          // possible answer
-            low = mid + 1;      // search in right half
+            ans = mid;          
+            low = mid + 1;      
         }
         else if (nums[mid] < target) {
             low = mid + 1;
